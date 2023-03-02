@@ -4,16 +4,17 @@ import { getDatabaseCart, removeFromDatabaseCart, clearLocalShoppingCart } from 
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import happyImg from '../../images/giphy.gif'
+import { useNavigate } from 'react-router-dom';
+
 
 const Review = () => {
     const [cart, setCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);
-    const orderPlaceHandler = () => {
+    const navigate = useNavigate();
 
-        setCart([]);
+    const handleProceedCheckout = () => {
 
-        clearLocalShoppingCart();
-        setOrderPlaced(true);
+        navigate('/shipment');
     }
 
     useEffect(() => {
@@ -56,7 +57,7 @@ const Review = () => {
             </div>
             <div>
                 <Cart cart={cart}>
-                    <button onClick={orderPlaceHandler} className='add-btn'>Proceed Checkout</button>
+                    <button onClick={handleProceedCheckout} className='add-btn'>Proceed Checkout</button>
                 </Cart>
             </div>
 
