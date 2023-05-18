@@ -13,8 +13,8 @@ const Header = () => {
             <nav>
                 <Link to="/shop">Shop</Link>
                 <Link to="/review">Order Review</Link>
-                <Link to="/orders">Order History</Link>
-                <button onClick={() => setLoggedInUser({})}>Sign Out</button>
+                <Link to="/orders">Manage Inventory</Link>
+                <button onClick={() => setLoggedInUser({})}>{loggedInUser.isSignedIn ? 'Sign Out' : 'Sign In'}</button>
             </nav>
         </div>
     );

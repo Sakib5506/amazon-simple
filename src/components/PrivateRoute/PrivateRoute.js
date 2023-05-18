@@ -4,7 +4,6 @@ import { Navigate, Outlet, useLocation, useNavigate, Redirect } from 'react-rout
 import { UserContext } from '../../App';
 
 
-
 const PrivateRoute = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     let navigate = useNavigate();

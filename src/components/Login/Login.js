@@ -14,7 +14,7 @@ function Login() {
         password: '',
         photo: ''
     })
-
+    console.log(users.isSignedIn);
     initializeLoginFramework();
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -92,9 +92,9 @@ function Login() {
 
     return (
         <div style={{ textAlign: 'center' }}>
-            {users.isSignedIn ? <button onClick={signOut}>Sign Out</button> :
-                <button onClick={googleSignIn}>Sign In</button>
-            }
+            {users.isSignedIn ? (<button onClick={googleSignIn}>Sign In</button>) : (
+                <button onClick={signOut}>Sign Out</button>
+            )}
             <br />
             <button onClick={fbSignIn}>Sign in using Facebook</button>
 

@@ -65,7 +65,7 @@ export const handleSignOut = () => {
     const auth = getAuth();
     return signOut(auth).then(() => {
         const signedInUser = {
-            isSigned: false,
+            isSignedIn: false,
             name: '',
             email: '',
             photo: '',
